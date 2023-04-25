@@ -23,8 +23,60 @@
 
 package homework_2.task_2;
 
-public class MyProgram {
-    public static void main(String[] args) {
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.Scanner;
 
+public class MyProgram {
+    public int promptInt(String message) {
+        Scanner iScanner = new Scanner(System.in);
+        while (true) {
+            if (!(Objects.equals(message.strip(), ""))) {
+                System.out.println(message);
+            }
+            System.out.print(">>> ");
+            String line = iScanner.nextLine();
+            try {
+                return Integer.parseInt(line);
+            } catch (NumberFormatException e) {
+                System.out.println("Неправильное число!");
+            }
+        }
+    }
+
+    public void run() {
+        ArrayList<String> kitchenBook = new ArrayList<>();
+        ArrayList<String[]> replaces = new ArrayList<>();
+        Scanner iScanner = new Scanner(System.in);
+        int receiptsCount = promptInt("Введите кол-во строк");
+        for (int i = 1; i <= receiptsCount; i++) {
+            System.out.print(i + " строка " + ">>> ");
+            String receipt = iScanner.nextLine();
+            kitchenBook.add(receipt);
+        }
+        int productsCount = promptInt("Введите кол-во продуктов");
+        for (int i = 1; i <= productsCount; i++) {
+            System.out.print(i + " продукты " + ">>> ");
+            String[] products = iScanner.nextLine().split(" - ");
+            replaces.add(products);
+        }
+        for (int i = 0; i < receiptsCount; i++) {
+            String receipt = kitchenBook.get(i);
+            for (String[] products : replaces) {
+                String allergy = products[0];
+                String replace = products[1];
+                allergy = allergy.substring(0, 1).toUpperCase() + allergy.substring(1);
+                replace = replace.substring(0, 1).toUpperCase() + replace.substring(1);
+                receipt = receipt.replace(allergy.toLowerCase(), replace.toLowerCase());
+                receipt = receipt.replace(allergy, replace);
+            }
+            kitchenBook.set(i, receipt);
+        }
+        System.out.println(kitchenBook);
+    }
+
+    public static void main(String[] args) {
+        MyProgram program = new MyProgram();
+        program.run();
     }
 }

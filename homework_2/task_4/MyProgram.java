@@ -12,7 +12,7 @@
 package homework_2.task_4;
 
 public class MyProgram {
-    public static void main(String[] args) {
+    public void run() {
         String fileUrl = "https://raw.githubusercontent.com/aksodar/JSeminar_2/master/src/main/resources/example.txt";
     }
 
@@ -34,5 +34,10 @@ public class MyProgram {
 
     public boolean removeFromLocale(String fileName) {
         return false;
+    }
+
+    public static void main(String[] args) {
+        MyProgram program = new MyProgram();
+        program.run();
     }
 }

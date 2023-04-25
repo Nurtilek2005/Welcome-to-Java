@@ -7,7 +7,12 @@
 package homework_2.task_5;
 
 public class MyProgram {
-    public static void main(String[] args) {
+    public void run() {
+        
+    }
 
+    public static void main(String[] args) {
+        MyProgram program = new MyProgram();
+        program.run();
     }
 }
