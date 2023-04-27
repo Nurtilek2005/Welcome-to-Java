@@ -89,6 +89,7 @@ public class MyProgram {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        calculator.execute(" 1    +  2  ");
+        Scanner iScanner = new Scanner(System.in);
+        System.out.println(calculator.execute(iScanner.nextLine()));
     }
 }

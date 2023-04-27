@@ -2,8 +2,8 @@ package homework_2.task_5.calculator;
 
 import homework_2.task_5.calculator.operation.*;
 
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Objects;
 
 public class Calculator {
     HashMap<String, IOperation> operations = new HashMap<>();
@@ -15,18 +15,33 @@ public class Calculator {
         operations.put("*", new MultipleOperation());
     }
 
-    public void execute(String numbers) {
+    public double execute(String numbers) {
         String last = "";
-        String[] regex = numbers.split(" ");
-        for (int i = 0; i < regex.length; i++) {
-            String number = regex[i].strip();
-            if (Objects.equals(number, "")) continue;
-            if (operations.containsKey(number)) {
-                System.out.println(last + " " + number + " " + regex[i]);
-                continue;
-            }
-            last = number;
+        while (numbers.contains("  ")) {
+            numbers = numbers.replace("  ", " ");
+            numbers = numbers.stripIndent();
         }
-        IOperation operation = operations.get("+");
+        String[] parts = numbers.split(" ");
+        for (int i = 0; i < parts.length; i++) {
+            String part = parts[i].strip();
+            if (operations.containsKey(part)) {
+                IOperation operation = operations.get(part);
+                String next = parts[++i].strip();
+                if (operations.containsKey(next)) {
+                    throw new IllegalArgumentException();
+                }
+                try {
+                    double lastNum = Double.parseDouble(last);
+                    double nextNum = Double.parseDouble(next);
+                    double result = operation.execute(lastNum, nextNum);
+                    last = String.valueOf(result);
+                    continue;
+                } catch (NumberFormatException e) {
+                    throw new IllegalArgumentException();
+                }
+            }
+            last = part;
+        }
+        return Double.parseDouble(last);
     }
 }
