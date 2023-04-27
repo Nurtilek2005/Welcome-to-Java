@@ -6,6 +6,8 @@
 
 package homework_2.task_5;
 
+import homework_2.task_5.calculator.Calculator;
+
 import java.util.Scanner;
 
 public class MyProgram {
@@ -79,14 +81,14 @@ public class MyProgram {
             if (!(operation instanceof Operation)) {
                 continue;
             }
-            Object result = execOperation(number_1, number_2, operation);
+            Object result = execOperation(number_1, number_2, (Operation) operation);
             System.out.println(result);
             break;
         }
     }
 
     public static void main(String[] args) {
-        MyProgram program = new MyProgram();
-        program.run();
+        Calculator calculator = new Calculator();
+        calculator.execute(" 1    +  2  ");
     }
 }
