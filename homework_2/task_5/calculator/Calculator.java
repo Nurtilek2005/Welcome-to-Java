@@ -20,10 +20,14 @@ public class Calculator {
 
     public double execute(String numbers) {
         String last = "";
+        logger.info("Got: " + numbers);
+        logger.info("Removing trailing...");
         while (numbers.contains("  ")) {
             numbers = numbers.replace("  ", " ");
             numbers = numbers.stripIndent();
         }
+        logger.info("Removing trailing success!");
+        logger.info("Solving...");
         String[] parts = numbers.split(" ");
         for (int i = 0; i < parts.length; i++) {
             String part = parts[i].strip();
@@ -31,7 +35,8 @@ public class Calculator {
                 IOperation operation = operations.get(part);
                 String next = parts[++i].strip();
                 if (operations.containsKey(next)) {
-                    throw new IllegalArgumentException();
+                    logger.severe("Found operation while solving each!");
+                    return 0;
                 }
                 try {
                     double lastNum = Double.parseDouble(last);
@@ -40,11 +45,12 @@ public class Calculator {
                     last = String.valueOf(result);
                     continue;
                 } catch (NumberFormatException e) {
-                    throw new IllegalArgumentException();
+                    logger.severe("Incorrect number format! M: " + e.getMessage());
                 }
             }
             last = part;
         }
+        logger.info("Success!");
         return Double.parseDouble(last);
     }
 }
