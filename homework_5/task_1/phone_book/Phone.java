@@ -1,23 +1,31 @@
 package homework_5.task_1.phone_book;
 
+import java.util.Objects;
+
 public class Phone {
-    private final int id;
     private String phoneNumber;
-    private static int idCounter = 0;
 
-    public Phone(int phone_number) {
-        this.id = getNextId();
-    }
-
-    private static synchronized int getNextId() {
-        return ++idCounter;
-    }
-
-    public int getId() {
-        return this.id;
+    public Phone(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public boolean equals(Object phoneNumber) {
+        if (phoneNumber instanceof Phone phone) {
+            return Objects.equals(this.getPhoneNumber(), phone.getPhoneNumber());
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
         return this.phoneNumber;
     }
 }
