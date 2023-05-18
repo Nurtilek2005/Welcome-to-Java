@@ -21,6 +21,7 @@ public class MyProgram {
         User user2 = new User("Матвей", "Матвеев", "Матвеевич");
         user1.addNumber(new Phone("+9148931237378"));
         user1.addNumber(new Phone("+1764328746723"));
+        System.out.println(phoneBook.getUsers());
     }
 
     public static void main(String[] args) {
