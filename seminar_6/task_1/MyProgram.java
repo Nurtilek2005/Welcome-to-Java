@@ -8,8 +8,6 @@ package seminar_6.task_1;
 процент уникальных чисел = количество уникальных чисел * 100 / общее количество чисел в массиве.
 */
 
-import java.util.Set;
-
 public class MyProgram {
     public void run() {
 
