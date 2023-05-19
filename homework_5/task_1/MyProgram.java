@@ -18,10 +18,12 @@ public class MyProgram {
     public void run() {
         PhoneBook phoneBook = new PhoneBook();
         User user1 = new User("Андрей", "Андреев", "Андреевич");
-        User user2 = new User("Матвей", "Матвеев", "Матвеевич");
         user1.addNumber(new Phone("+9148931237378"));
         user1.addNumber(new Phone("+1764328746723"));
-        System.out.println(phoneBook.getUsers());
+        phoneBook.addUser(user1);
+        User fUser = phoneBook.getUser("Андрей", "Андреев", "Андреевич");
+        fUser.addNumber(new Phone("+5387487348"));
+        phoneBook.saveUser(fUser);
     }
 
     public static void main(String[] args) {
