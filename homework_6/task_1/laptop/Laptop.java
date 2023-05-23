@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Laptop {
-    private String brand;
-    private String model;
-    private String serial;
+    private final String brand;
+    private final String model;
+    private final String serial;
 
     private CPU cpu;
     private GPU gpu;
@@ -54,6 +54,14 @@ public class Laptop {
         return this.gpu;
     }
 
+    public void setDisplay(Display display) {
+        this.display = display;
+    }
+
+    public Display getDisplay() {
+        return this.display;
+    }
+
     public Map<Integer, RAM> getRAMs() {
         return this.rams;
     }
@@ -73,5 +81,26 @@ public class Laptop {
 
     public void unsetRAM(int slot) {
         this.getRAMs().remove(slot);
+    }
+
+    public Map<Integer, Memory> getMemories() {
+        return this.memories;
+    }
+
+    public boolean isMemoryExists(int id) {
+        return this.getMemories().containsKey(id);
+    }
+
+    public Memory getMemory(int id) {
+        if (!this.isMemoryExists(id)) return null;
+        return this.getMemories().get(id);
+    }
+
+    public void setMemory(int id, Memory memory) {
+        this.getMemories().put(id, memory);
+    }
+
+    public void unsetMemory(int id) {
+        this.getMemories().remove(id);
     }
 }

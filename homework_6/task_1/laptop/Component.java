@@ -1,9 +1,9 @@
 package homework_6.task_1.laptop;
 
 public abstract class Component {
-    protected String brand;
-    protected String model;
-    protected String serial;
+    protected final String brand;
+    protected final String model;
+    protected final String serial;
 
     public Component(String brand, String model, String serial) {
         this.brand = brand;
