@@ -13,6 +13,7 @@ public class Laptop {
     private final String brand;
     private final String model;
     private final String serial;
+    private final String color;
 
     private CPU cpu;
     private GPU gpu;
@@ -20,10 +21,11 @@ public class Laptop {
     private final Map<Integer, RAM> rams = new HashMap<>();
     private final Map<Integer, Memory> memories = new HashMap<>();
 
-    public Laptop(String brand, String model, String serial) {
+    public Laptop(String brand, String model, String serial, String color) {
         this.brand = brand;
         this.model = model;
         this.serial = serial;
+        this.color = color;
     }
 
     public String getBrand() {
@@ -36,6 +38,10 @@ public class Laptop {
 
     public String getSerial() {
         return this.serial;
+    }
+
+    public String getColor() {
+        return this.color;
     }
 
     public void setCPU(CPU cpu) {
@@ -102,5 +108,15 @@ public class Laptop {
 
     public void unsetMemory(int id) {
         this.getMemories().remove(id);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append(this.getBrand()).append(" ");
+        result.append(this.getModel()).append(" ");
+        result.append(this.getSerial()).append(" ");
+        result.append(this.getColor());
+        return result.toString();
     }
 }

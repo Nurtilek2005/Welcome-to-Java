@@ -9,4 +9,8 @@ public class Display extends Component {
         super(brand, model, serial);
         this.dimension = dimension;
     }
+
+    public double getDimension() {
+        return this.dimension;
+    }
 }
