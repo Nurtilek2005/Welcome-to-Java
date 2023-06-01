@@ -136,82 +136,21 @@ public class MyProgram {
         laptop14.setDisplay(new Display("Asus", "Zenbook 14 Flip OLED", "UP3404VA", 14));
         laptop14.setMemory(0, new SSD("Samsung", "NVMe", "980", 1000));
 
-        Laptop laptop15 = new Laptop("Acer", "Aspire 1", "A115-32-P859", "Silver");
-        laptop15.setCPU(new CPU("Intel", "Pentium Silver", "N6000", 4, 4, 1.1, 3.3));
-        laptop15.setGPU(new GPU("AMD", "RADEON", "GRAPHICS"));
-        laptop15.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 4));
-        laptop15.setDisplay(new Display("Acer", "Aspire 1", "A115-32-P859", 15));
-        laptop15.setMemory(0, new HDD("Seagate", "BarraCuda", "ST500LM030", 500));
+        Laptop laptop15 = new Laptop("Asus", "Vivobook Pro 15X", "K6501ZM", "Cool Silver");
+        laptop15.setCPU(new CPU("Intel", "Core", "i7-12700H", 4, 4, 1.1, 3.3));
+        laptop15.setGPU(new GPU("NVIDIA", "GeForce", "RTX 3060"));
+        laptop15.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 8));
+        laptop15.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 8));
+        laptop15.setDisplay(new Display("Asus", "Vivobook Pro 15X", "K6501ZM", 15.6));
+        laptop15.setMemory(0, new HDD("Seagate", "BarraCuda", "ST500LM030", 1000));
 
-        Laptop laptop16 = new Laptop("Acer", "Aspire 1", "A115-32-P859", "Silver");
-        laptop16.setCPU(new CPU("Intel", "Pentium Silver", "N6000", 4, 4, 1.1, 3.3));
-        laptop16.setGPU(new GPU("AMD", "RADEON", "GRAPHICS"));
+        Laptop laptop16 = new Laptop("Dell", "Latitude", "5420", "Silver");
+        laptop16.setCPU(new CPU("Intel", "Core", "i5-1135G7", 4, 4, 2.4, 4.2));
+        laptop16.setGPU(new GPU("AMD", "Iris Xe", "Graphics"));
         laptop16.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 4));
-        laptop16.setDisplay(new Display("Acer", "Aspire 1", "A115-32-P859", 15));
+        laptop16.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 4));
+        laptop16.setDisplay(new Display("Dell", "Latitude", "5420", 15));
         laptop16.setMemory(0, new HDD("Seagate", "BarraCuda", "ST500LM030", 500));
-
-        Laptop laptop17 = new Laptop("Acer", "Aspire 1", "A115-32-P859", "Silver");
-        laptop17.setCPU(new CPU("Intel", "Pentium Silver", "N6000", 4, 4, 1.1, 3.3));
-        laptop17.setGPU(new GPU("AMD", "RADEON", "GRAPHICS"));
-        laptop17.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 4));
-        laptop17.setDisplay(new Display("Acer", "Aspire 1", "A115-32-P859", 15));
-        laptop17.setMemory(0, new HDD("Seagate", "BarraCuda", "ST500LM030", 500));
-
-        Laptop laptop18 = new Laptop("Acer", "Aspire 1", "A115-32-P859", "Silver");
-        laptop18.setCPU(new CPU("Intel", "Pentium Silver", "N6000", 4, 4, 1.1, 3.3));
-        laptop18.setGPU(new GPU("AMD", "RADEON", "GRAPHICS"));
-        laptop18.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 4));
-        laptop18.setDisplay(new Display("Acer", "Aspire 1", "A115-32-P859", 15));
-        laptop18.setMemory(0, new HDD("Seagate", "BarraCuda", "ST500LM030", 500));
-
-        Laptop laptop19 = new Laptop("Acer", "Aspire 1", "A115-32-P859", "Silver");
-        laptop19.setCPU(new CPU("Intel", "Pentium Silver", "N6000", 4, 4, 1.1, 3.3));
-        laptop19.setGPU(new GPU("AMD", "RADEON", "GRAPHICS"));
-        laptop19.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 4));
-        laptop19.setDisplay(new Display("Acer", "Aspire 1", "A115-32-P859", 15));
-        laptop19.setMemory(0, new HDD("Seagate", "BarraCuda", "ST500LM030", 500));
-
-        Laptop laptop20 = new Laptop("Acer", "Aspire 1", "A115-32-P859", "Silver");
-        laptop20.setCPU(new CPU("Intel", "Pentium Silver", "N6000", 4, 4, 1.1, 3.3));
-        laptop20.setGPU(new GPU("AMD", "RADEON", "GRAPHICS"));
-        laptop20.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 4));
-        laptop20.setDisplay(new Display("Acer", "Aspire 1", "A115-32-P859", 15));
-        laptop20.setMemory(0, new HDD("Seagate", "BarraCuda", "ST500LM030", 500));
-
-        Laptop laptop21 = new Laptop("Acer", "Aspire 1", "A115-32-P859", "Silver");
-        laptop21.setCPU(new CPU("Intel", "Pentium Silver", "N6000", 4, 4, 1.1, 3.3));
-        laptop21.setGPU(new GPU("AMD", "RADEON", "GRAPHICS"));
-        laptop21.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 4));
-        laptop21.setDisplay(new Display("Acer", "Aspire 1", "A115-32-P859", 15));
-        laptop21.setMemory(0, new HDD("Seagate", "BarraCuda", "ST500LM030", 500));
-
-        Laptop laptop22 = new Laptop("Acer", "Aspire 1", "A115-32-P859", "Silver");
-        laptop22.setCPU(new CPU("Intel", "Pentium Silver", "N6000", 4, 4, 1.1, 3.3));
-        laptop22.setGPU(new GPU("AMD", "RADEON", "GRAPHICS"));
-        laptop22.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 4));
-        laptop22.setDisplay(new Display("Acer", "Aspire 1", "A115-32-P859", 15));
-        laptop22.setMemory(0, new HDD("Seagate", "BarraCuda", "ST500LM030", 500));
-
-        Laptop laptop23 = new Laptop("Acer", "Aspire 1", "A115-32-P859", "Silver");
-        laptop23.setCPU(new CPU("Intel", "Pentium Silver", "N6000", 4, 4, 1.1, 3.3));
-        laptop23.setGPU(new GPU("AMD", "RADEON", "GRAPHICS"));
-        laptop23.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 4));
-        laptop23.setDisplay(new Display("Acer", "Aspire 1", "A115-32-P859", 15));
-        laptop23.setMemory(0, new HDD("Seagate", "BarraCuda", "ST500LM030", 500));
-
-        Laptop laptop24 = new Laptop("Acer", "Aspire 1", "A115-32-P859", "Silver");
-        laptop24.setCPU(new CPU("Intel", "Pentium Silver", "N6000", 4, 4, 1.1, 3.3));
-        laptop24.setGPU(new GPU("AMD", "RADEON", "GRAPHICS"));
-        laptop24.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 4));
-        laptop24.setDisplay(new Display("Acer", "Aspire 1", "A115-32-P859", 15));
-        laptop24.setMemory(0, new HDD("Seagate", "BarraCuda", "ST500LM030", 500));
-
-        Laptop laptop25 = new Laptop("Acer", "Aspire 1", "A115-32-P859", "Silver");
-        laptop25.setCPU(new CPU("Intel", "Pentium Silver", "N6000", 4, 4, 1.1, 3.3));
-        laptop25.setGPU(new GPU("AMD", "RADEON", "GRAPHICS"));
-        laptop25.setRAM(0, new RAM("Kingston", "HyperX", "Fury", 4));
-        laptop25.setDisplay(new Display("Acer", "Aspire 1", "A115-32-P859", 15));
-        laptop25.setMemory(0, new HDD("Seagate", "BarraCuda", "ST500LM030", 500));
 
         LaptopManager manager = new LaptopManager();
         manager.addLaptop(laptop1);
@@ -230,17 +169,8 @@ public class MyProgram {
         manager.addLaptop(laptop14);
         manager.addLaptop(laptop15);
         manager.addLaptop(laptop16);
-        manager.addLaptop(laptop17);
-        manager.addLaptop(laptop18);
-        manager.addLaptop(laptop19);
-        manager.addLaptop(laptop20);
-        manager.addLaptop(laptop21);
-        manager.addLaptop(laptop22);
-        manager.addLaptop(laptop23);
-        manager.addLaptop(laptop24);
-        manager.addLaptop(laptop25);
 
-        System.out.println(manager.getLaptopsByModel("ENVY"));
+        System.out.println(manager.getLaptopsByMemorySize(1000));
     }
 
     public static void main(String[] args) {
