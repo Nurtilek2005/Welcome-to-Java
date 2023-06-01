@@ -2,7 +2,9 @@ package homework_6.task_1.laptop;
 
 import homework_6.task_1.laptop.cpu.CPU;
 import homework_6.task_1.laptop.display.Display;
+import homework_6.task_1.laptop.memory.HDD;
 import homework_6.task_1.laptop.memory.Memory;
+import homework_6.task_1.laptop.memory.SSD;
 import homework_6.task_1.laptop.ram.RAM;
 
 import java.util.LinkedHashSet;
@@ -75,6 +77,54 @@ public class LaptopManager {
             }
             if (memorySize == laptopRam) {
                 filterLaptops.add(laptop);
+            }
+        }
+        return filterLaptops;
+    }
+
+    public Set<Laptop> getLaptopsBySSD() {
+        Set<Laptop> filterLaptops = new LinkedHashSet<>();
+        for (Laptop laptop: this.laptopList) {
+            for (Memory memory: laptop.getMemories().values()) {
+                if (!(memory instanceof SSD)) continue;
+                filterLaptops.add(laptop);
+            }
+        }
+        return filterLaptops;
+    }
+
+    public Set<Laptop> getLaptopsBySSD(int capacity) {
+        Set<Laptop> filterLaptops = new LinkedHashSet<>();
+        for (Laptop laptop: this.laptopList) {
+            for (Memory memory: laptop.getMemories().values()) {
+                if (!(memory instanceof SSD)) continue;
+                if (capacity == memory.getCapacity()) {
+                    filterLaptops.add(laptop);
+                }
+            }
+        }
+        return filterLaptops;
+    }
+
+    public Set<Laptop> getLaptopsByHDD() {
+        Set<Laptop> filterLaptops = new LinkedHashSet<>();
+        for (Laptop laptop: this.laptopList) {
+            for (Memory memory: laptop.getMemories().values()) {
+                if (!(memory instanceof HDD)) continue;
+                filterLaptops.add(laptop);
+            }
+        }
+        return filterLaptops;
+    }
+
+    public Set<Laptop> getLaptopsByHDD(int capacity) {
+        Set<Laptop> filterLaptops = new LinkedHashSet<>();
+        for (Laptop laptop: this.laptopList) {
+            for (Memory memory: laptop.getMemories().values()) {
+                if (!(memory instanceof HDD)) continue;
+                if (capacity == memory.getCapacity()) {
+                    filterLaptops.add(laptop);
+                }
             }
         }
         return filterLaptops;

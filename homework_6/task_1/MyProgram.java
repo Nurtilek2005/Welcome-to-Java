@@ -26,6 +26,9 @@ import homework_6.task_1.laptop.memory.HDD;
 import homework_6.task_1.laptop.memory.SSD;
 import homework_6.task_1.laptop.ram.RAM;
 
+import java.util.Scanner;
+import java.util.Set;
+
 public class MyProgram {
     public void run() {
         Laptop laptop1 = new Laptop("Asus", "ROG Flow", "X16", "Dark Grey");
@@ -170,7 +173,71 @@ public class MyProgram {
         manager.addLaptop(laptop15);
         manager.addLaptop(laptop16);
 
-        System.out.println(manager.getLaptopsByMemorySize(1000));
+        Scanner iScanner = new Scanner(System.in);
+        System.out.println("Введите цифру, соответствующую необходимому критерию:");
+        System.out.println("1 - ОЗУ");
+        System.out.println("2 - Наличие SSD");
+        System.out.println("3 - Наличие HDD");
+        System.out.println("4 - Кол-во ядер");
+        System.out.println("5 - Кол-во потоков");
+        System.out.println("6 - Размер экрана");
+        String inputLine = iScanner.nextLine();
+        Set<Laptop> laptops = null;
+        switch (inputLine) {
+            case "1":
+                int ram = this.getInt("Введите обьем оперативной памяти:");
+                laptops = manager.getLaptopsByRamSize(ram);
+                break;
+            case "2":
+                int ssdCapacity = this.getInt("Введите обьем SSD");
+                laptops = manager.getLaptopsBySSD(ssdCapacity);
+                break;
+            case "3":
+                int hddCapacity = this.getInt("Введите обьем HDD");
+                laptops = manager.getLaptopsByHDD(hddCapacity);
+                break;
+            case "4":
+                int coresCount = this.getInt("Введите кол-во ядер");
+                laptops = manager.getLaptopsByCoresCount(coresCount);
+                break;
+            case "5":
+                int threadsCount = this.getInt("Введите кол-во потоков");
+                laptops = manager.getLaptopsByThreadsCount(threadsCount);
+                break;
+            case "6":
+                double dimension = this.getInt("Введите размер экрана");
+                laptops = manager.getLaptopsByDimension(dimension);
+                break;
+        }
+        System.out.println(laptops);
+    }
+
+    public int getInt(String message) {
+        Scanner iScanner = new Scanner(System.in);
+        while (true) {
+            if (message != null) System.out.println(message);
+            String intoLine = iScanner.nextLine();
+            try {
+                int number = Integer.parseInt(intoLine);
+                return number;
+            } catch (NumberFormatException e) {
+                System.out.println("Incorrect number!");
+            }
+        }
+    }
+
+    public double getDouble(String message) {
+        Scanner iScanner = new Scanner(System.in);
+        while (true) {
+            if (message != null) System.out.println(message);
+            String intoLine = iScanner.nextLine();
+            try {
+                double number = Double.parseDouble(intoLine);
+                return number;
+            } catch (NumberFormatException e) {
+                System.out.println("Incorrect number!");
+            }
+        }
     }
 
     public static void main(String[] args) {
